@@ -61,3 +61,48 @@ Confirme se as visualizações e análises estão corretas.
 Após a verificação, salve e publique o relatório.
 
 Lembre-se de que estas são diretrizes gerais e o processo pode variar conforme as sugestões específicas e os dados em questão.
+
+Aqui estão mais alguns exemplos de funções DAX que podemos usar para enriquecer as análises no Power BI:
+
+### **Exemplos de Funções DAX**
+
+#### **Cálculo de Média**
+Para calcular a média de vendas, você pode usar a função `AVERAGE`:
+```dax
+MediaDeVendas = AVERAGE(Vendas[Valor])
+```
+
+#### **Cálculo de Percentual**
+Para calcular o percentual de vendas realizadas por um segmento específico, use a função `CALCULATE` junto com `FILTER`:
+```dax
+PercentualDeVendasSegmento = CALCULATE(
+    DIVIDE(
+        SUM(Vendas[Valor]),
+        CALCULATE(SUM(Vendas[Valor]), ALL(Vendas))
+    ),
+    Vendas[Segmento] = "Tecnologia"
+)
+```
+
+#### **Crescimento Ano a Ano**
+Para analisar o crescimento ano a ano, você pode utilizar a função `SAMEPERIODLASTYEAR`:
+```dax
+CrescimentoAnoAAno = DIVIDE(
+    SUM(Vendas[Valor]) - CALCULATE(SUM(Vendas[Valor]), SAMEPERIODLASTYEAR('Calendário'[Data])),
+    CALCULATE(SUM(Vendas[Valor]), SAMEPERIODLASTYEAR('Calendário'[Data]))
+)
+```
+
+#### **Ranking de Vendas**
+Para criar um ranking de vendas entre os vendedores, use a função `RANKX`:
+```dax
+RankingDeVendas = RANKX(ALL(Vendedores), SUM(Vendas[Valor]))
+```
+
+#### **Total Acumulado**
+Para calcular o total acumulado de vendas ao longo do tempo, você pode usar a função `TOTALYTD`:
+```dax
+TotalAcumuladoAnual = TOTALYTD(SUM(Vendas[Valor]), 'Calendário'[Data])
+```
+
+Esses são apenas alguns exemplos das poderosas funções DAX disponíveis no Power BI para ajudar na realização de análises complexas e criar relatórios dinâmicos.
