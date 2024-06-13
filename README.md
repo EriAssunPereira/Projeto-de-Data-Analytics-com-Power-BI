@@ -1,30 +1,63 @@
 # Projeto-de-Data-Analytics-com-Power-BI
-Aqui está um exemplo de como podemos realizar uma análise estatística e criar visualizações de dados no Power BI:
 
-1. **Carregar Dados**: No Power BI Desktop, clique em "Obter Dados" (Get Data) no menu Início (Home). Selecione o tipo de fonte de dados que você deseja importar.
+Como podemos realizar uma análise estatística e criar visualizações de dados no Power BI. 
 
-2. **Transformar Dados**: Use a janela "Editor de Consultas" (Query Editor) para limpar e transformar os dados conforme necessário.
+Exemplos de código DAX para análise estatística:
 
-3. **Criar Modelo de Dados**: Na janela "Relações" (Relationships), você pode criar um modelo de dados arrastando campos para criar relações entre tabelas.
+---
 
-4. **Análise Estatística**: No painel "Campos" (Fields), você pode arrastar e soltar os campos para criar visualizações. Para análises estatísticas, você pode usar funções DAX (Data Analysis Expressions) para criar novas colunas ou medidas.
+## **Carregar Dados**
+No Power BI Desktop, siga estes passos para carregar seus dados:
+1. Clique em **"Obter Dados"** no menu **Início**.
+2. Selecione o tipo de fonte de dados que deseja importar.
 
-5. **Criar Visualizações**: No painel "Visualizações" (Visualizations), você pode selecionar o tipo de gráfico que deseja criar. Arraste e solte os campos para o gráfico.
+## **Transformar Dados**
+Após carregar os dados, utilize o **Editor de Consultas** para:
+- Limpar dados desnecessários.
+- Transformar formatos de dados.
 
-6. **Publicar Relatório**: Quando terminar, você pode publicar o relatório no serviço Power BI para compartilhá-lo com outras pessoas.
+## **Criar Modelo de Dados**
+Na janela **"Relações"**, crie um modelo de dados:
+- Arraste campos para criar relações entre tabelas.
 
-Como fazer modificações no Power BI com base nas sugestões de um especialista para criar visualizações com foco em análise de dados. Aqui estão algumas etapas gerais que podemos seguir:
+## **Análise Estatística com DAX**
+Utilize o painel **"Campos"** para:
+- Arrastar e soltar campos e criar visualizações.
+- Usar funções DAX para análise, como:
 
-1. **Entenda as Sugestões do Especialista**: Antes de começar, certifique-se de que você entendeu completamente as sugestões do especialista. Isso pode incluir a criação de novas visualizações, a alteração de visualizações existentes, a realização de novas análises estatísticas, etc.
+```dax
+MedidaDeVendas = SUM(Vendas[Valor])
+```
 
-2. **Abra o Relatório no Power BI**: Abra o relatório que você deseja modificar no Power BI Desktop.
+## **Criar Visualizações**
+No painel **"Visualizações"**, selecione o tipo de gráfico e arraste os campos relevantes.
 
-3. **Faça as Modificações**: Com base nas sugestões do especialista, faça as modificações necessárias. Isso pode envolver a alteração de gráficos, a adição de novos campos, a alteração de medidas, etc.
+## **Publicar Relatório**
+Publique seu relatório no serviço Power BI para compartilhamento.
 
-4. **Verifique Seu Trabalho**: Depois de fazer as modificações, verifique se tudo está correto. Certifique-se de que todas as visualizações estão corretas e que todas as análises estatísticas estão corretas.
+---
 
-5. **Salve e Publique Seu Trabalho**: Depois de verificar seu trabalho, salve o relatório e publique-o no serviço Power BI.
+## **Modificações no Power BI com Base em Sugestões de Especialistas**
 
-Lembre-se, estas são apenas etapas gerais. O processo exato pode variar dependendo das sugestões específicas do especialista e dos dados com os quais você está trabalhando.
+### **Entenda as Sugestões do Especialista**
+Certifique-se de compreender as sugestões, que podem incluir:
+- Criação de novas visualizações.
+- Alteração de visualizações existentes.
 
-https://academiapme-my.sharepoint.com/:f:/g/personal/renato_dio_me/EovzCujn0JJEhT5Nm8K5_DkB9Hc8ONl2jSiHIVf35LXK4Q?e=wqvxUo
+### **Abra o Relatório no Power BI Desktop**
+Faça as modificações necessárias no relatório aberto.
+
+### **Faça as Modificações**
+Baseado nas sugestões, altere gráficos ou adicione novos campos, como:
+
+```dax
+TaxaDeCrescimento = (SUM(Vendas[ValorAnoAtual]) - SUM(Vendas[ValorAnoAnterior])) / SUM(Vendas[ValorAnoAnterior])
+```
+
+### **Verifique Seu Trabalho**
+Confirme se as visualizações e análises estão corretas.
+
+### **Salve e Publique Seu Trabalho**
+Após a verificação, salve e publique o relatório.
+
+Lembre-se de que estas são diretrizes gerais e o processo pode variar conforme as sugestões específicas e os dados em questão.
